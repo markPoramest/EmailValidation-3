@@ -7,7 +7,7 @@ public class EmailValidationMain {
 
 	public static boolean checkForValidEmailAddress(String emailAddress) {
 		boolean isValidEmailAddress;
-		String emailRegex = "^[a-zA-Z]{1,}[\\.\\_\\-\\+]?[a-zA-Z]*[@]{1}[a-zA-Z]{1,}[.]{1}[a-z]{2,}";
+		String emailRegex = "^[a-zA-Z]{1,}[\\.\\_\\-\\+]?[a-zA-Z]*[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]{2}$";
 		Pattern pattern = Pattern.compile(emailRegex);
 		Matcher matcher = pattern.matcher(emailAddress);
 
@@ -17,7 +17,7 @@ public class EmailValidationMain {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Email Validator !");
-		String inputEmailAddress = "abc-gg@ama.com";
+		String inputEmailAddress = "abc-gg@ama.lmao.in";
 
 		if (checkForValidEmailAddress(inputEmailAddress)) {
 			System.out.println(inputEmailAddress + " is valid.");
